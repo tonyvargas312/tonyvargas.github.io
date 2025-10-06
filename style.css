@@ -158,13 +158,18 @@ canvas#stars {
 }
 
 .btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 999px;
   font-weight: 600;
-  padding: 12px 25px;
+  padding: 10px 28px; /* slightly adjusted padding */
+  line-height: 1;      /* ensures text is centered vertically */
   text-decoration: none;
   border: none;
   transition: all 0.3s ease;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .btn-pill.primary {
