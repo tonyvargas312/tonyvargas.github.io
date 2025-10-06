@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Tony Vargas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Background -->
+  <canvas id="stars"></canvas>
+
+  <!-- Logo -->
+  <div class="logo-standalone">
+    <a href="index.html">
+      <img src="images/logo.svg" alt="Tony Vargas Logo">
+    </a>
+  </div>
+
+  <!-- Nav Bar -->
+  <div class="topbar">
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#more">More</a></li>
+        <li><a href="#book" class="btn-pill">Book a Call</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- About Page Content -->
+  <section class="about-page">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>More <span class="highlight">About Me</span></h2>
+        <h1>I'm Tony, a <span class="gradient-text">creative developer</span></h1>
+        <p>
+          I'm passionate about transforming complex ideas into intuitive digital experiences.  
+          My work blends technology, design, and strategy — building tools and products that feel alive and meaningful.
+        </p>
+        <p>
+          With a background in full-stack development and cybersecurity, I focus on creating efficient,  
+          secure, and scalable solutions. Whether I’m designing interfaces or optimizing backend systems,  
+          I’m always chasing innovation with precision.
+        </p>
+        <p>
+          Outside of work, I love exploring art, travel, and how human creativity intersects with technology.
+        </p>
+      </div>
+
+      <div class="about-images">
+        <img src="images/profile.jpg" alt="Tony Vargas" class="img-top">
+        <img src="images/workspace.jpg" alt="Workspace" class="img-bottom">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-bottom">
+      <p>© 2025 Tony Vargas. All rights reserved.</p>
+      <p><a href="#">Privacy Policy</a> • <a href="#">Terms & Conditions</a></p>
+    </div>
+  </footer>
+
+  <!-- Star Background Script -->
+  <script>
+    const canvas = document.getElementById("stars");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    let stars = Array.from({ length: 150 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * 1.5,
+      speed: Math.random() * 0.5 + 0.2
+    }));
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "white";
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+  </script>
+</body>
+</html>
