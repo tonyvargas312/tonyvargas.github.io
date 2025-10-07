@@ -330,18 +330,16 @@ canvas#stars {
   }
 }
 
-/* ========================================================= */
-/* ===== ABOUT PAGE (separate content section) ===== */
-/* ========================================================= */
-
+/* ===== ABOUT PAGE (Updated, No Animation) ===== */
 .about-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 40px;
-  background: linear-gradient(160deg, #233C4B 0%, #1a2a34 100%);
+  padding: 50px 40px 60px; /* reduced top padding */
+  background: linear-gradient(160deg, #233C4B 0%, #5F9B8C 50%, #A0C382 100%);
   color: #e5e7eb;
+  position: relative;
 }
 
 .about-container {
@@ -350,6 +348,7 @@ canvas#stars {
   gap: 60px;
   max-width: 1200px;
   align-items: center;
+  margin-top: -60px; /* pulls image & text up slightly */
 }
 
 .about-text {
@@ -372,7 +371,9 @@ canvas#stars {
 
 .gradient-text {
   background: linear-gradient(90deg, #FF7D2D, #FAC846);
+  background-clip: text;
   -webkit-background-clip: text;
+  color: transparent;
   -webkit-text-fill-color: transparent;
   font-style: italic;
 }
@@ -417,6 +418,7 @@ canvas#stars {
   .about-container {
     flex-direction: column-reverse;
     text-align: center;
+    margin-top: 0;
   }
 
   .about-images {
