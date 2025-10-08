@@ -1,13 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-  <rect width="500" height="500" fill="none"/> <!-- transparent background -->
+<!-- Stylized TV Monogram – fixed T visibility -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">TV Monogram Logo (Improved)</title>
+  <desc id="desc">Stylized TV monogram with clearer T shape and orange-yellow gradient.</desc>
 
-  <!-- Capital T (white, behind, nudged right to 248) -->
-  <text x="249" y="320" text-anchor="middle" font-size="260" font-family="Arial, sans-serif" fill="#e5e7eb" font-weight="700">
-    T
-  </text>
+  <defs>
+    <linearGradient id="tvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#FF7D2D"/>
+      <stop offset="100%" stop-color="#FAC846"/>
+    </linearGradient>
 
-  <!-- Capital V (gray, in front) -->
-  <text x="250" y="320" text-anchor="middle" font-size="260" font-family="Arial, sans-serif" fill="#9ca3af" font-weight="700">
-    V
-  </text>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Hex-style frame -->
+  <path
+    d="M500 120 L795 270 L795 730 L500 880 L205 730 L205 270 Z"
+    fill="none"
+    stroke="url(#tvGrad)"
+    stroke-opacity="0.35"
+    stroke-width="26"
+    stroke-linejoin="round"/>
+
+  <!-- Monogram -->
+  <g filter="url(#softGlow)" stroke="url(#tvGrad)" stroke-linecap="round" fill="none">
+    <!-- T -->
+    <line x1="320" y1="250" x2="680" y2="250" stroke-width="90"/>  <!-- top bar -->
+    <line x1="500" y1="250" x2="500" y2="520" stroke-width="90"/>  <!-- vertical stem -->
+    <!-- V -->
+    <path d="M350 460 L500 730 L650 460" stroke-width="90"/>       <!-- V shape -->
+  </g>
+
+  <!-- Accent corners -->
+  <g stroke="url(#tvGrad)" stroke-width="18" stroke-linecap="round" opacity="0.6">
+    <line x1="205" y1="270" x2="260" y2="300"/>
+    <line x1="795" y1="270" x2="740" y2="300"/>
+    <line x1="205" y1="730" x2="260" y2="700"/>
+    <line x1="795" y1="730" x2="740" y2="700"/>
+  </g>
 </svg>

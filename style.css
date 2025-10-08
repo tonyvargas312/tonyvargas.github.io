@@ -330,98 +330,60 @@ canvas#stars {
   }
 }
 
-/* ===== ABOUT PAGE (Updated, No Animation) ===== */
-.about-page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 40px 60px; /* reduced top padding */
-  background: linear-gradient(160deg, #233C4B 0%, #5F9B8C 50%, #A0C382 100%);
-  color: #e5e7eb;
-  position: relative;
+/* ===== STYLED BOTTOM HERO (ABOUT PAGE MATCH) ===== */
+.styled-bottom-hero {
+  background: linear-gradient(180deg, #5F9B8C 0%, #A0C382 100%);
+  color: #233C4B;
+  padding: 120px 40px;
+  text-align: center;
+  border-top: 4px solid rgba(255, 255, 255, 0.15);
 }
 
-.about-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 60px;
-  max-width: 1200px;
-  align-items: center;
-  margin-top: -60px; /* pulls image & text up slightly */
+.styled-bottom-hero .hero-content {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.about-text {
-  flex: 1 1 480px;
-}
-
-.about-text h2 {
-  color: #FAC846;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-}
-
-.about-text h1 {
+.styled-bottom-hero h1 {
   font-size: 2.8rem;
+  line-height: 1.3;
+  font-weight: 700;
   margin-bottom: 25px;
-  line-height: 1.2;
+  color: #233C4B;
 }
 
-.gradient-text {
+.styled-bottom-hero .gradient-text {
   background: linear-gradient(90deg, #FF7D2D, #FAC846);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  font-style: italic;
 }
 
-.about-text p {
-  line-height: 1.7;
-  margin-bottom: 15px;
-  color: #cbd5e1;
+.styled-bottom-hero .subtitle {
+  font-size: 1.2rem;
+  color: rgba(35, 60, 75, 0.85);
+  margin-bottom: 40px;
 }
 
-.about-images {
-  flex: 1 1 400px;
-  position: relative;
+.styled-bottom-hero .btn-pill.primary {
+  background: #FF7D2D;
+  color: #233C4B;
+  box-shadow: 0 4px 14px rgba(255, 125, 45, 0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
-.about-images img {
-  width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.4s ease;
+.styled-bottom-hero .btn-pill.primary:hover {
+  background: #FAC846;
+  transform: translateY(-2px);
 }
 
-.about-images .img-top {
-  position: relative;
-  z-index: 2;
-}
-
-.about-images .img-bottom {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  width: 90%;
-  opacity: 0.85;
-  z-index: 1;
-}
-
-.about-images:hover .img-top {
-  transform: translateY(-10px);
-}
-
-@media (max-width: 900px) {
-  .about-container {
-    flex-direction: column-reverse;
-    text-align: center;
-    margin-top: 0;
+@media (max-width: 768px) {
+  .styled-bottom-hero {
+    padding: 80px 20px;
   }
 
-  .about-images {
-    margin-bottom: 40px;
+  .styled-bottom-hero h1 {
+    font-size: 2rem;
   }
 }
