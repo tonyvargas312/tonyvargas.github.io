@@ -1,15 +1,14 @@
-/* ===== Reset & Global ===== */
+/* =========================================================
+   STYLE.CSS — Home Page Styles
+   ========================================================= */
+
+/* ===== GLOBAL BACKGROUND ===== */
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
   background: #233C4B; /* Blue Dianne */
-  color: #e5e7eb;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
-h1, h2, h3, p { margin: 0; }
-
+/* ===== STARFIELD BACKGROUND CANVAS ===== */
 canvas#stars {
   position: fixed;
   top: 0;
@@ -17,94 +16,7 @@ canvas#stars {
   z-index: -1;
 }
 
-/* ===== Standalone Logo ===== */
-.logo-standalone {
-  position: fixed;
-  top: 0;
-  left: 30px;
-  z-index: 1100;
-}
-
-.logo-standalone img {
-  height: 90px;
-  width: auto;
-}
-
-/* ===== Navigation ===== */
-.topbar {
-  position: fixed;
-  top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  z-index: 1000;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 22px;
-  margin: 0;
-  padding: 6px 20px;
-  background: rgba(35, 60, 75, 0.65);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 999px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-}
-
-.nav-links a {
-  color: #fff;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 8px 14px;
-  border-radius: 999px;
-  transition: all 0.3s ease;
-  position: relative;
-  font-size: 0.95rem;
-}
-
-.nav-links a:hover { background: rgba(255, 255, 255, 0.08); }
-.nav-links a.active { background: rgba(255, 255, 255, 0.12); }
-
-.nav-links a.active::before {
-  content: "";
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 32px;
-  height: 6px;
-  background: #FF7D2D;
-  border-radius: 3px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-}
-
-/* Book a Call Button */
-.nav-links .btn-pill {
-  background: #FF7D2D;
-  color: #233C4B !important;
-  font-weight: 600;
-  border-radius: 999px;
-  padding: 8px 16px;
-  box-shadow: 0 0 10px rgba(255, 125, 45, 0.3);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.nav-links .btn-pill:hover {
-  background: #FAC846;
-  transform: translateY(-1px);
-}
-
-/* ===== Hero ===== */
+/* ===== HERO SECTION (TOP) ===== */
 .hero {
   display: flex;
   justify-content: center;
@@ -114,16 +26,22 @@ canvas#stars {
   padding: 0 20px;
 }
 
-.hero-content { max-width: 900px; }
+.hero-content {
+  max-width: 900px;
+}
 
 .hero h1 {
   font-size: 3rem;
   line-height: 1.3;
   font-weight: 700;
   margin-bottom: 20px;
+  color: #fff;
 }
 
-.hero .highlight { color: #FF7D2D; font-style: italic; }
+.hero .highlight {
+  color: #FF7D2D; /* Crusta Orange */
+  font-style: italic;
+}
 
 .subtitle {
   font-size: 1.2rem;
@@ -131,7 +49,7 @@ canvas#stars {
   color: #cbd5e1;
 }
 
-/* Hero Buttons */
+/* ===== HERO BUTTONS ===== */
 .hero-buttons {
   display: flex;
   gap: 20px;
@@ -153,20 +71,27 @@ canvas#stars {
   font-size: 1rem;
 }
 
-.btn-pill.primary { background: #FF7D2D; color: #0f172a; }
-.btn-pill.primary:hover { background: #FAE846; }
+.btn-pill.primary {
+  background: #FF7D2D;
+  color: #0f172a;
+}
+
+.btn-pill.primary:hover {
+  background: #FAE846;
+}
 
 .btn-pill.secondary {
   border: 2px solid #FF7D2D;
   color: #FF7D2D;
   background: transparent;
 }
+
 .btn-pill.secondary:hover {
   background: #FF7D2D;
   color: #0f172a;
 }
 
-/* ===== Grid Section ===== */
+/* ===== GRID SECTION ===== */
 .grid-section {
   padding: 100px 40px;
   display: flex;
@@ -192,70 +117,74 @@ canvas#stars {
   transition: all 0.3s ease;
   backdrop-filter: blur(12px);
 }
-.grid-card:hover { transform: translateY(-6px); background: rgba(255, 255, 255, 0.1); }
+
+.grid-card:hover {
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.1);
+}
 
 .grid-card h3 {
   color: #FF7D2D;
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
+
 .grid-card p {
   color: #EAEAEA;
   line-height: 1.6;
   font-size: 1rem;
 }
 
-/* ===== Footer ===== */
-.footer {
-  padding: 80px 40px 40px;
-  background: rgba(0, 0, 0, 0.2);
-  color: #e5e7eb;
-  backdrop-filter: blur(10px);
-}
-
-.footer-content {
+/* ===== BOTTOM HERO SECTION ===== */
+.bottom-hero {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 0 auto 40px;
-}
-
-.footer-left { flex: 1; min-width: 250px; margin-bottom: 30px; }
-
-.footer-logo { height: 60px; margin-bottom: 15px; }
-
-.footer-links { display: flex; gap: 60px; }
-
-.footer-links div { display: flex; flex-direction: column; }
-
-.footer-links h4 { color: #FF7D2D; margin-bottom: 10px; }
-
-.footer-links a {
-  color: #e5e7eb;
-  text-decoration: none;
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-}
-.footer-links a:hover { color: #FAE846; }
-
-.footer-bottom {
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  font-size: 0.9rem;
-  color: #b8c1cc;
+  min-height: 80vh;
+  padding: 0 20px;
+  background: rgba(255, 255, 255, 0.02);
 }
-.footer-bottom a {
-  color: #FF7D2D;
-  text-decoration: none;
-  margin: 0 5px;
-}
-.footer-bottom a:hover { color: #FAE846; }
 
-/* ===== Responsive ===== */
+.bottom-hero .hero-content {
+  max-width: 900px;
+}
+
+.bottom-hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.3;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.bottom-hero .highlight {
+  color: #FF7D2D;
+}
+
+.bottom-hero .subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #cbd5e1;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2rem; }
-  .nav-links { gap: 10px; padding: 6px 15px; }
-  .nav-links a { padding: 8px 12px; }
-  .grid-container { gap: 25px; }
-  .footer-content { flex-direction: column; text-align: center; gap: 40px; }
+  .hero h1,
+  .bottom-hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .grid-section {
+    padding: 60px 20px;
+  }
+
+  .grid-container {
+    gap: 25px;
+  }
 }
