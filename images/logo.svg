@@ -1,46 +1,33 @@
-<!-- Stylized TV Monogram – fixed T visibility -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
-  <title id="title">TV Monogram Logo (Improved)</title>
-  <desc id="desc">Stylized TV monogram with clearer T shape and orange-yellow gradient.</desc>
-
+<!-- tv-abstract-merge.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Tony Vargas merged T and V logo">
   <defs>
-    <linearGradient id="tvGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%"  stop-color="#FF7D2D"/>
+    <!-- Patina → Green → Yellow gradient -->
+    <linearGradient id="patinaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#5F9B8C"/>
+      <stop offset="50%" stop-color="#A0C382"/>
       <stop offset="100%" stop-color="#FAC846"/>
     </linearGradient>
-
-    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
-  <!-- Hex-style frame -->
-  <path
-    d="M500 120 L795 270 L795 730 L500 880 L205 730 L205 270 Z"
-    fill="none"
-    stroke="url(#tvGrad)"
-    stroke-opacity="0.35"
-    stroke-width="26"
-    stroke-linejoin="round"/>
-
-  <!-- Monogram -->
-  <g filter="url(#softGlow)" stroke="url(#tvGrad)" stroke-linecap="round" fill="none">
-    <!-- T -->
-    <line x1="320" y1="250" x2="680" y2="250" stroke-width="90"/>  <!-- top bar -->
-    <line x1="500" y1="250" x2="500" y2="520" stroke-width="90"/>  <!-- vertical stem -->
-    <!-- V -->
-    <path d="M350 460 L500 730 L650 460" stroke-width="90"/>       <!-- V shape -->
-  </g>
-
-  <!-- Accent corners -->
-  <g stroke="url(#tvGrad)" stroke-width="18" stroke-linecap="round" opacity="0.6">
-    <line x1="205" y1="270" x2="260" y2="300"/>
-    <line x1="795" y1="270" x2="740" y2="300"/>
-    <line x1="205" y1="730" x2="260" y2="700"/>
-    <line x1="795" y1="730" x2="740" y2="700"/>
-  </g>
+  <!--
+    Composition:
+    - One continuous path: vertical stem flows into descending arms
+    - Top bar implied by smooth curve
+    - Subtle tapering gives direction and elegance
+  -->
+  <path fill="url(#patinaGradient)" d="
+    M 256 120
+    C 248 150, 248 190, 252 230
+    C 254 250, 260 260, 276 270
+    C 300 286, 330 310, 360 345
+    C 370 357, 370 365, 364 374
+    C 356 386, 336 386, 320 368
+    C 296 342, 276 320, 256 304
+    C 236 320, 216 342, 192 368
+    C 176 386, 156 386, 148 374
+    C 142 365, 142 357, 152 345
+    C 182 310, 212 286, 236 270
+    C 252 260, 258 250, 260 230
+    C 264 190, 264 150, 256 120
+    Z" />
 </svg>
